@@ -112,14 +112,16 @@ body.theme-dark{
   transition:transform .18s ease, box-shadow .18s ease;
   border:1px solid rgba(255,255,255,0.02);
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-  position:relative;overflow:visible;
+  position:relative;overflow:visible;z-index:1;
 }
 .module-card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(0,0,0,0.6)}
+.module-card[data-tooltip-open="true"]{z-index:12}
+.module-card:focus{outline:none}
 .module-title{font-weight:600;letter-spacing:0.04em}
 .module-sub{font-size:13px;color:var(--muted)}
 .module-badge{font-family:"Orbitron";font-size:18px;color:var(--neon-primary);}
 
-/* Tooltip (hover / focus) */
+/* Tooltip (hover / focus / toggle) */
 .tooltip{
   position:absolute;left:50%;transform:translateX(-50%) translateY(12px);
   bottom:100%;
@@ -127,7 +129,11 @@ body.theme-dark{
   color:#eaf9ff;padding:10px;border-radius:10px;min-width:200px;max-width:320px;text-align:left;font-size:13px;
   border:1px solid rgba(110,243,255,0.08);box-shadow:0 8px 30px rgba(0,0,0,0.6);opacity:0;pointer-events:none;transition:opacity .12s ease, transform .12s ease;z-index:6
 }
-.module-card:hover .tooltip,.module-card:focus .tooltip{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(6px)}
+/* show tooltip on hover, focus, or when toggled via data attribute */
+.module-card:hover .tooltip,
+.module-card:focus .tooltip,
+.module-card[data-tooltip-open="true"] .tooltip,
+.module-card:focus-within .tooltip{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(6px)}
 
 /* Core summaries collapsed for smaller screens */
 .core-summaries{display:none}
