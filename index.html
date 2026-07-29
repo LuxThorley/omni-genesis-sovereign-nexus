@@ -130,5 +130,36 @@
       <p class="small">Built for clarity and ergonomic control. Visual refresh by the Malcolm style guide.</p>
     </footer>
   </main>
+
+  <!-- Auto-unlock script: automatically engage ASAC on page load for seamless public access. -->
+  <script>
+    (function(){
+      function unlock() {
+        try {
+          var gate = document.getElementById('asac-gate');
+          var root = document.getElementById('nexus-root');
+          if (gate) {
+            gate.style.display = 'none';
+            gate.setAttribute('aria-hidden','true');
+          }
+          if (root) {
+            root.classList.remove('hidden');
+            root.style.display = '';
+          }
+          // Dispatch a custom event so other scripts can react if they listen for manual unlocks
+          try { window.dispatchEvent(new CustomEvent('asac:unlocked', {detail:{auto:true}})); } catch(e) { }
+          // Call legacy hook if present
+          if (typeof window.onSovereignUnlock === 'function') {
+            try { window.onSovereignUnlock(); } catch(e) { console.warn('onSovereignUnlock handler failed', e); }
+          }
+        } catch (e) {
+          console.warn('Auto-unlock failed', e);
+        }
+      }
+
+      if (document.readyState === 'complete' || document.readyState === 'interactive') unlock();
+      else document.addEventListener('DOMContentLoaded', unlock);
+    })();
+  </script>
 </body>
 </html>
