@@ -1,6 +1,6 @@
 /* Omni-Core refreshed appearance — futuristic, ergonomic, Malcolm-inspired
    Place this file at css/omni-core.css
-*/
+ */
 
 /* Base, fonts, and colors */
 :root{
@@ -94,6 +94,7 @@ body.theme-dark{
 .hero-inner{padding:18px;border-radius:16px;display:flex;flex-direction:column;gap:8px}
 .hero-title{margin:0;font-size:20px;letter-spacing:0.06em}
 .hero-sub{margin:0;color:var(--muted);font-size:13px}
+.cosmic-summary{margin:6px 0 0 0;color:#bfefff;font-size:13px;max-width:900px}
 .coherence-meter{margin-top:8px;display:flex;align-items:center;gap:12px}
 .coherence-bar{flex:1;height:12px;background:linear-gradient(90deg,#071226,#0b1220);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
 .coherence-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--neon-primary),var(--neon-secondary));box-shadow:0 6px 18px rgba(110,243,255,0.06)}
@@ -111,10 +112,25 @@ body.theme-dark{
   transition:transform .18s ease, box-shadow .18s ease;
   border:1px solid rgba(255,255,255,0.02);
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  position:relative;overflow:visible;
 }
 .module-card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(0,0,0,0.6)}
 .module-title{font-weight:600;letter-spacing:0.04em}
 .module-sub{font-size:13px;color:var(--muted)}
+.module-badge{font-family:"Orbitron";font-size:18px;color:var(--neon-primary);}
+
+/* Tooltip (hover / focus) */
+.tooltip{
+  position:absolute;left:50%;transform:translateX(-50%) translateY(12px);
+  bottom:100%;
+  background:linear-gradient(180deg, rgba(6,20,30,0.9), rgba(3,10,18,0.95));
+  color:#eaf9ff;padding:10px;border-radius:10px;min-width:200px;max-width:320px;text-align:left;font-size:13px;
+  border:1px solid rgba(110,243,255,0.08);box-shadow:0 8px 30px rgba(0,0,0,0.6);opacity:0;pointer-events:none;transition:opacity .12s ease, transform .12s ease;z-index:6
+}
+.module-card:hover .tooltip,.module-card:focus .tooltip{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(6px)}
+
+/* Core summaries collapsed for smaller screens */
+.core-summaries{display:none}
 
 /* Control section layout */
 .control-section{
@@ -153,7 +169,7 @@ select{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);b
 /* Asac overlay */
 .asac-gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;z-index:40}
 .asac-panel{width:420px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:stretch;text-align:left}
-.asac-seal{font-family:"Orbitron";font-size:36px;width:66px;height:66px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--neon-primary),var(--neon-secondary));color:var(--bg)}
+.asac-seal{font-family:"Orbitron";font-size:36px;width:66px;height:66px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--neon-primary),var(--neon-secondary));color:var(--bg);}
 .asac-title{margin:0;font-size:18px}
 .asac-form input{margin-top:6px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
 .asac-actions{display:flex;gap:10px;margin-top:10px}
@@ -168,4 +184,7 @@ select{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);b
   .nexus-header{flex-direction:column;align-items:flex-start;gap:12px}
   body{padding:18px}
   .asac-panel{width:100%}
+  .modules-grid{grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));}
+  .tooltip{left:8%;transform:none;bottom:auto;top:-8px}
+  .core-summaries{display:block;margin-top:16px}
 }
