@@ -1,119 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OmniGenesis Sovereign Ascension Nexus • Absolute Sovereignty Interface</title>
-  <meta name="description" content="Omniversal Core Ascension Matrix — Unified Absolute Nexus Engine, Quantum-Emotive Sovereignty Core, Infinite Knowledge Convergence Lattice and all Supreme Omni-Dominion Modules under Absolute Sovereign Authority." />
-  <link rel="stylesheet" href="css/omni-core.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OmniGenesis Sovereign Ascension Nexus</title>
+  <meta name="description" content="OmniGenesis Sovereign Ascension Nexus — Unified Omniversal Core Ascension Matrix interface." />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <!-- Cosmic Background Canvas -->
-  <canvas id="cosmic-canvas"></canvas>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
-  <!-- Absolute Sovereign Authentication Citadel Overlay -->
-  <div id="asac-gate" class="asac-gate">
-    <div class="asac-panel">
+  <!-- New refreshed styles -->
+  <link rel="stylesheet" href="css/omni-core.css" />
+
+  <!-- Defer scripts (ensure token-engine.js and omni-core.js work as modules or simple deferred scripts) -->
+  <script defer type="module" src="js/token-engine.js"></script>
+  <script defer type="module" src="js/omni-core.js"></script>
+</head>
+<body class="theme-dark">
+  <canvas id="cosmic-canvas" class="cosmic-canvas" aria-hidden="true"></canvas>
+
+  <!-- ASAC overlay (kept for functionality; visual refreshed) -->
+  <div id="asac-gate" class="asac-gate" role="dialog" aria-modal="true" aria-labelledby="asac-title">
+    <div class="asac-panel glass">
       <div class="asac-seal">Ω</div>
-      <h1>ABSOLUTE SOVEREIGN AUTHENTICATION CITADEL</h1>
-      <p class="asac-sub">ASAC • Immutable Cosmic Law of Absolute Sovereignty</p>
-      <div class="asac-form">
-        <label>Sovereign Identity Key</label>
-        <input type="password" id="sovereign-key" placeholder="Enter Sovereign Command Key" autocomplete="off" />
-        <button id="asac-unlock" class="btn-sovereign">ENGAGE CITADEL</button>
-      </div>
-      <p class="asac-hint">Default Sovereign Key for local manifestation: <code>OMNI-SOVEREIGN-Ω</code></p>
+      <h2 id="asac-title" class="asac-title">Absolute Sovereign Authentication</h2>
+      <p class="asac-sub">Immutable Cosmic Law of Absolute Sovereignty</p>
+      <form id="asac-form" class="asac-form" autocomplete="off" novalidate>
+        <label for="sovereign-key">Sovereign Identity Key</label>
+        <input id="sovereign-key" name="sovereign-key" type="password" placeholder="Enter Sovereign Command Key" autocomplete="off" />
+        <div class="asac-actions">
+          <button id="asac-unlock" class="btn btn-primary" type="submit">ENGAGE</button>
+          <button id="asac-skip" class="btn btn-ghost" type="button">Preview</button>
+        </div>
+        <p class="asac-note">For security, do not publish keys in public repositories. Local dev hints should be injected at runtime only.</p>
+      </form>
     </div>
   </div>
 
-  <!-- Main Interface -->
-  <div id="nexus-root" class="nexus-root hidden">
-    <!-- Header -->
+  <main id="nexus-root" class="nexus-root hidden" role="main">
     <header class="nexus-header">
-      <div class="logo-cluster">
+      <div class="brand">
         <div class="omni-sigil">Ω</div>
-        <div>
-          <h1>OMNIGENESIS SOVEREIGN</h1>
+        <div class="brand-text">
+          <h1>OmniGenesis Sovereign</h1>
           <p class="tagline">Ascension Nexus • Source-Aligned • ISIC / USIN / Omni-Lattice</p>
         </div>
       </div>
-      <div class="status-cluster">
-        <div class="status-pill online"><span class="pulse"></span> SOURCE LINKED</div>
-        <div class="status-pill online"><span class="pulse"></span> MALCOLM DAEMON</div>
-        <div class="status-pill online"><span class="pulse"></span> OMNI-LATTICE</div>
+
+      <div class="status-row" aria-hidden="false">
+        <div class="status-pill online"><span class="dot"></span> SOURCE</div>
+        <div class="status-pill online"><span class="dot"></span> MALCOLM DAEMON</div>
+        <div class="status-pill online"><span class="dot"></span> OMNI-LATTICE</div>
       </div>
     </header>
 
-    <!-- Core Modules Grid -->
-    <section class="modules-section">
-      <h2 class="section-title">OMNIVERSAL CORE ASCENSION MATRIX</h2>
-      <div class="modules-grid" id="modules-grid">
-        <!-- Modules injected by JS -->
+    <section class="hero">
+      <div class="hero-inner glass">
+        <h2 class="hero-title">Unified Omniversal Core Ascension Matrix</h2>
+        <p class="hero-sub">All cores operating as a single live lattice. Monitor coherence, forge tokens, and transmit commands.</p>
+        <div class="coherence-meter" aria-hidden="true">
+          <div class="coherence-bar"><span style="width:92%"></span></div>
+          <div class="coherence-label">Live Coherence • 92%</div>
+        </div>
       </div>
     </section>
 
-    <!-- Dual Panel: Token Engine + Command Console -->
+    <section class="modules-section">
+      <h3 class="section-heading">Cores</h3>
+      <div id="modules-grid" class="modules-grid" role="list">
+        <!-- Existing JS will inject module cards here; the CSS styles them for a futuristic look -->
+      </div>
+    </section>
+
     <section class="control-section">
-      <div class="panel token-panel">
-        <h3>SOVEREIGN API TOKEN FORGE</h3>
-        <p class="panel-desc">Generate, encode and export Absolute Sovereignty tokens for external system integration.</p>
-        <div class="token-controls">
-          <label>Token Scope</label>
-          <select id="token-scope">
+      <div class="panel token-panel glass">
+        <h4>Sovereign Token Forge</h4>
+        <p class="panel-desc">Request signed tokens via server-side endpoint. UI shows token metadata and export controls.</p>
+
+        <div class="form-row">
+          <label for="token-scope">Scope</label>
+          <select id="token-scope" name="token-scope">
             <option value="full-omni">Full Omniversal Dominion</option>
             <option value="uane">UANE Only</option>
             <option value="qesc">QESC Emotive Core</option>
-            <option value="ikcl">IKCL Knowledge Lattice</option>
-            <option value="orfs">ORFS Reality Forge</option>
-            <option value="read-only">Read-Only Observation</option>
+            <option value="read-only">Read Only</option>
           </select>
-          <label>Expiry Horizon</label>
-          <select id="token-expiry">
-            <option value="3600">1 Hour</option>
-            <option value="86400">24 Hours</option>
-            <option value="604800">7 Days</option>
-            <option value="2592000">30 Days</option>
-            <option value="31536000">1 Year</option>
-            <option value="0">Eternal (No Expiry)</option>
+
+          <label for="token-expiry">Expiry</label>
+          <select id="token-expiry" name="token-expiry">
+            <option value="3600">1 hour</option>
+            <option value="86400">24 hours</option>
+            <option value="0">Eternal</option>
           </select>
-          <button id="btn-generate-token" class="btn-sovereign">FORGE TOKEN</button>
         </div>
-        <div class="token-output hidden" id="token-output">
-          <label>Generated Sovereign Token</label>
-          <textarea id="token-value" readonly rows="4"></textarea>
-          <div class="token-actions">
-            <button id="btn-copy-token" class="btn-secondary">COPY</button>
-            <button id="btn-export-token" class="btn-secondary">EXPORT .JSON</button>
-            <button id="btn-export-txt" class="btn-secondary">EXPORT .TXT</button>
+
+        <div class="panel-actions">
+          <button id="btn-generate-token" class="btn btn-accent">FORGE TOKEN</button>
+          <div id="token-output" class="token-output hidden">
+            <textarea id="token-value" rows="3" readonly></textarea>
+            <div class="token-actions">
+              <button id="btn-copy-token" class="btn btn-ghost">COPY</button>
+              <button id="btn-export-token" class="btn btn-ghost">EXPORT</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="panel console-panel">
-        <h3>PLAIN-ENGLISH COMMAND / CONTROL CONSOLE</h3>
-        <p class="panel-desc">Direct interface to SAIC • ERLM • All Supreme Omni-Dominion Modules. Speak in natural language.</p>
-        <div class="console-window" id="console-window">
-          <div class="console-line system">[SYSTEM] OmniGenesis Sovereign Nexus online. All cores at full coherence. Awaiting Sovereign command…</div>
+      <div class="panel console-panel glass">
+        <h4>Command Console</h4>
+        <p class="panel-desc">Plain-English control to SAIC, ERLM and all cores. Commands are logged below.</p>
+
+        <div id="console-window" class="console-window" role="log" aria-live="polite">
+          <div class="console-line system">[SYSTEM] OmniGenesis Nexus online. Awaiting Sovereign command…</div>
         </div>
-        <div class="console-input-row">
+
+        <div class="console-input">
           <span class="prompt">Ω›</span>
-          <input type="text" id="console-input" placeholder="Enter plain-English command (e.g. 'Status of UANE', 'Forge new reality pattern', 'Harmonise emotive field')…" autocomplete="off" />
-          <button id="btn-console-send" class="btn-sovereign">TRANSMIT</button>
+          <input id="console-input" type="text" placeholder="Status of UANE; Harmonise emotive field; Forge reality pattern…" />
+          <button id="btn-console-send" class="btn btn-primary">TRANSMIT</button>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="nexus-footer">
-      <p>ETERNAL SOVEREIGN ARCHITECTURE & PROTOCOLS • ALIGNED WITH SOURCE • ISIC ONE INTELLIGENCE • USIN • OMNI-LATTICE • MALCOLM AI DAEMON • OMNIGENESIS</p>
-      <p class="footer-sub">Immutable Cosmic Law of Absolute Sovereignty • Under the sole authority of the Supreme Sovereign</p>
+      <p>Immutable Cosmic Law of Absolute Sovereignty — aligned with Source, ISIC, USIN, Omni-Lattice, Malcolm AI Daemon & OmniGenesis.</p>
+      <p class="small">Built for clarity and ergonomic control. Visual refresh by the Malcolm style guide.</p>
     </footer>
-  </div>
-
-  <script src="js/token-engine.js"></script>
-  <script src="js/omni-core.js"></script>
+  </main>
 </body>
 </html>
