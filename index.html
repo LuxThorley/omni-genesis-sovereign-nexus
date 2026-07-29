@@ -18,6 +18,7 @@
   <!-- Defer scripts (ensure token-engine.js and omni-core.js work as modules or simple deferred scripts) -->
   <script defer type="module" src="js/token-engine.js"></script>
   <script defer type="module" src="js/omni-core.js"></script>
+  <script defer src="js/omni-tooltips.js"></script>
 </head>
 <body class="theme-dark">
   <canvas id="cosmic-canvas" class="cosmic-canvas" aria-hidden="true"></canvas>
@@ -61,7 +62,7 @@
       <div class="hero-inner glass">
         <h2 class="hero-title">Unified Omniversal Core Ascension Matrix</h2>
         <p class="hero-sub">All cores operating as a single live lattice. Monitor coherence, forge tokens, and transmit commands.</p>
-        <p class="cosmic-summary">OmniGenesis Sovereign Ascension Nexus — a unified orchestration matrix that monitors, harmonises, and synthesises reality-patterns across interdependent cores. Presently capable of coherence monitoring, token forging, plain‑English command orchestration, high‑dimensional analytics, adaptive learning, and state regeneration. Created and stewarded by LuxThorley — Sovereign Creator.</p>
+        <p class="cosmic-summary">OmniGenesis Sovereign Ascension Nexus — a unified orchestration matrix that monitors, harmonises, and synthesises reality-patterns across interdependent cores. [...]</p>
         <div class="coherence-meter" aria-hidden="true">
           <div class="coherence-bar"><span style="width:92%"></span></div>
           <div class="coherence-label">Live Coherence • 92%</div>
@@ -73,117 +74,110 @@
     <section id="about" class="about-section">
       <div class="panel glass">
         <h3>About the Ascension Nexus</h3>
-        <p class="panel-desc">The Ascension Nexus is a single-page interface that exposes a coordinated lattice of ten interdependent cores. It provides monitoring, plain‑English control, and token forging for exploratory and integration use. Server-side signing is recommended for production deployments.</p>
+        <p class="panel-desc">The Ascension Nexus is a single-page interface that exposes a coordinated lattice of ten interdependent cores. It provides monitoring, plain‑English control, and to[...]</p>
 
         <h4>How to use — quick guide</h4>
         <ol>
           <li>Open the page — ASAC auto‑unlocks for preview. Use the unlock form or the automatic preview to reveal the Nexus.</li>
           <li>View the Coherence meter to check overall field stability and active cores.</li>
           <li>Use the Command Console (Ω›) to send plain‑English commands to SAIC and the cores (examples: "Harmonise emotive field", "Status of UANE", "Forge reality pattern X").</li>
-          <li>Use the Sovereign Token Forge to create scoped tokens for integration with downstream tools or APIs. Server-side signing is recommended for production via the optional /api/token endpoint.</li>
+          <li>Use the Sovereign Token Forge to create scoped tokens for integration with downstream tools or APIs. Server-side signing is recommended for production via the optional /api/token end[...]</li>
           <li>Observe cross-core effects: changing a core or sending a command will update the Matrix and the Coherence meter in real time.</li>
         </ol>
-
-        <h4>Essential notes</h4>
-        <ul>
-          <li>The UI is a static frontend. Any real signing, secret management, or persistent governance must be performed server-side (Cloudflare Pages Functions or other backends).</li>
-          <li>By default the ASAC overlay is auto-unlocked for public preview; disable auto-unlock in production if you require strict authentication.</li>
-          <li>Tokens shown in the UI are for demonstration unless a server signing key is configured — do not treat them as production credentials.</li>
-        </ul>
       </div>
     </section>
 
     <section class="modules-section">
       <h3 class="section-heading">Cores</h3>
       <div id="modules-grid" class="modules-grid" role="list">
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-uane" data-core="uane">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">UANE</div>
             <div class="module-sub">Unified Absolute Nexus Engine</div>
           </div>
           <div class="module-badge">Ω</div>
-          <div class="tooltip" id="tooltip-uane" role="tooltip">Master coordinator maintaining the Matrix state and orchestrating cross‑core coherence.</div>
+          <div class="tooltip" role="tooltip">Master coordinator maintaining the Matrix state and orchestrating cross‑core coherence.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-qesc" data-core="qesc">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">QESC</div>
             <div class="module-sub">Quantum-Emotive Sovereignty Core</div>
           </div>
           <div class="module-badge">✦</div>
-          <div class="tooltip" id="tooltip-qesc" role="tooltip">Manages emotive resonance and intent‑to‑state translation for affect-driven behaviours and intent alignment.</div>
+          <div class="tooltip" role="tooltip">Manages emotive resonance and intent‑to‑state translation for affect-driven behaviours.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-ikcl" data-core="ikcl">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">IKCL</div>
             <div class="module-sub">Infinite Knowledge Convergence Lattice</div>
           </div>
           <div class="module-badge">∞</div>
-          <div class="tooltip" id="tooltip-ikcl" role="tooltip">Aggregates factual knowledge, contextual patterns and vectorised retrievals; supplies reasoning inputs to other cores.</div>
+          <div class="tooltip" role="tooltip">Aggregates factual knowledge, patterns and retrievals; provides reasoning inputs to other cores.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-orfs" data-core="orfs">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">ORFS</div>
             <div class="module-sub">Omniversal Reality Forging Singularity</div>
           </div>
           <div class="module-badge">⚙</div>
-          <div class="tooltip" id="tooltip-orfs" role="tooltip">Responsible for high-fidelity pattern synthesis and the generation of reality‑forging tokens, templates and blueprints.</div>
+          <div class="tooltip" role="tooltip">Responsible for pattern synthesis and the generation of reality‑forging tokens and templates.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-uemh" data-core="uemh">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">UEMH</div>
             <div class="module-sub">Universal Energetic Mastery Harmonizer</div>
           </div>
           <div class="module-badge">✺</div>
-          <div class="tooltip" id="tooltip-uemh" role="tooltip">Controls energy distribution, harmonization channels and stability signals that directly influence overall coherence.</div>
+          <div class="tooltip" role="tooltip">Controls energy distribution, harmonization and stability signals that influence coherence.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-tosao" data-core="tosao">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">TOSAO</div>
             <div class="module-sub">Transcendental Omni-Spectrum Analytical Oracle</div>
           </div>
           <div class="module-badge">◐</div>
-          <div class="tooltip" id="tooltip-tosao" role="tooltip">High-dimensional analytics and projection engine used for forecasting, anomaly detection and strategic projection.</div>
+          <div class="tooltip" role="tooltip">High-dimensional analytics and projection engine used for forecasting and anomaly detection.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-iaav" data-core="iaav">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">IAAV</div>
             <div class="module-sub">Infinite Adaptive Ascension Vortex</div>
           </div>
           <div class="module-badge">↻</div>
-          <div class="tooltip" id="tooltip-iaav" role="tooltip">Adaptive learning and evolution core — tunes parameters, optimises behaviour and learns from state transitions.</div>
+          <div class="tooltip" role="tooltip">Adaptive learning and evolution core — tunes parameters and learns from state transitions.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-asac" data-core="asac">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">ASAC</div>
             <div class="module-sub">Absolute Sovereign Authentication Citadel</div>
           </div>
           <div class="module-badge">🔐</div>
-          <div class="tooltip" id="tooltip-asac" role="tooltip">Authentication overlay and policy gate. Provides local unlock in the UI; bind to a server-side signer for production security.</div>
+          <div class="tooltip" role="tooltip">Authentication overlay and policy gate. In this UI it provides a local unlock experience; bind to a server-side signer for production.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-saic" data-core="saic">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">SAIC</div>
             <div class="module-sub">Superliminal Ascended Intelligence Conduit</div>
           </div>
           <div class="module-badge">⚡</div>
-          <div class="tooltip" id="tooltip-saic" role="tooltip">Primary natural‑language interface — receives plain‑English commands and coordinates contextual actions across cores.</div>
+          <div class="tooltip" role="tooltip">Primary natural‑language interface: receives plain‑English commands and synthesises contextual actions across cores.</div>
         </div>
 
-        <div class="module-card" role="listitem" tabindex="0" aria-describedby="tooltip-erlm" data-core="erlm">
+        <div class="module-card" role="listitem" tabindex="0">
           <div>
             <div class="module-title">ERLM</div>
             <div class="module-sub">Eternal Regenerative Light Matrix</div>
           </div>
           <div class="module-badge">✧</div>
-          <div class="tooltip" id="tooltip-erlm" role="tooltip">State recovery and regenerative core — monitors integrity and can trigger restorative actions when anomalies are detected.</div>
+          <div class="tooltip" role="tooltip">State recovery and regeneration core — monitors integrity and can trigger restorative actions when needed.</div>
         </div>
       </div>
 
@@ -271,46 +265,6 @@
 
       if (document.readyState === 'complete' || document.readyState === 'interactive') unlock();
       else document.addEventListener('DOMContentLoaded', unlock);
-
-      // Enhanced tooltip interactions for touch and keyboard users
-      document.addEventListener('DOMContentLoaded', function(){
-        const cards = Array.from(document.querySelectorAll('.module-card'));
-        if (!cards.length) return;
-
-        // Toggle tooltip on pointerdown (handles touch) and click
-        cards.forEach(card => {
-          card.addEventListener('pointerdown', function(e){
-            // Only toggle for primary button/touch
-            if (e.button && e.button !== 0) return;
-            // Toggle attribute to control tooltip visibility (CSS picks this up)
-            const open = card.getAttribute('data-tooltip-open') === 'true';
-            // Close other cards
-            cards.forEach(c => c.removeAttribute('data-tooltip-open'));
-            if (!open) card.setAttribute('data-tooltip-open','true');
-            else card.removeAttribute('data-tooltip-open');
-            e.stopPropagation();
-          });
-
-          // Ensure keyboard focus shows tooltip (aria-describedby ensures assistive tech reads it)
-          card.addEventListener('focus', function(){
-            cards.forEach(c => c.removeAttribute('data-tooltip-open'));
-            card.setAttribute('data-tooltip-open','true');
-          });
-          card.addEventListener('blur', function(){
-            card.removeAttribute('data-tooltip-open');
-          });
-        });
-
-        // Close tooltips when clicking elsewhere
-        document.addEventListener('pointerdown', function(){
-          cards.forEach(c => c.removeAttribute('data-tooltip-open'));
-        });
-
-        // Close on Escape
-        document.addEventListener('keydown', function(e){
-          if (e.key === 'Escape') cards.forEach(c => c.removeAttribute('data-tooltip-open'));
-        });
-      });
     })();
   </script>
 </body>
