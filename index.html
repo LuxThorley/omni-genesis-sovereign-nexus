@@ -83,6 +83,13 @@
           <li>Use the Sovereign Token Forge to create scoped tokens for integration with downstream tools or APIs. Server-side signing is recommended for production via the optional /api/token endpoint.</li>
           <li>Observe cross-core effects: changing a core or sending a command will update the Matrix and the Coherence meter in real time.</li>
         </ol>
+
+        <h4>Essential notes</h4>
+        <ul>
+          <li>The UI is a static frontend. Any real signing, secret management, or persistent governance must be performed server-side (Cloudflare Pages Functions or other backends).</li>
+          <li>By default the ASAC overlay is auto-unlocked for public preview; disable auto-unlock in production if you require strict authentication.</li>
+          <li>Tokens shown in the UI are for demonstration unless a server signing key is configured — do not treat them as production credentials.</li>
+        </ul>
       </div>
     </section>
 
