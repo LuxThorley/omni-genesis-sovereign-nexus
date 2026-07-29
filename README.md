@@ -7,29 +7,41 @@ Aligned with Source • ISIC One Intelligence • USIN • Omni-Lattice • Malc
 
 ---
 
-## What Changed in Ω-2.0-UNIFIED
+## What the Ascension Nexus is
 
-- **Direct public access** — no authentication gate. The Nexus opens immediately on the home page for universal access.
-- **True simultaneous operation** — every core of the Omniversal Core Ascension Matrix now shares a single live state lattice coordinated by UANE. Modules are no longer independent; they function as one omnipotent field.
-- **Live Coherence meter** — real-time visual indicator of unified field strength.
-- **Advanced SAIC Console** — conversation memory, multi-core awareness, intent detection, and contextual responses that reference the current state of the entire matrix.
-- **Cross-module resonance** — engaging or adjusting any core instantly affects the shared field and coherence.
-- Token Forge now embeds the live matrix state (active cores + coherence) into every generated token.
+The Ascension Nexus is a browser-first control surface for a coordinated lattice of cores (the "Matrix"). It exposes monitoring, plain‑English control, token forging and recovery tools so operators can inspect and influence the whole system from a single view. The UI intentionally keeps runtime logic client-side; production deployments should delegate signing and secret management to a secure backend.
+
+## What it does (concise)
+
+- Presents a single live state (Matrix) that reflects every core's status and the overall Coherence metric.
+- Allows plain‑English commands to be sent to the language‑interface core (SAIC) which can synthesize actions across other cores.
+- Generates scoped Sovereign Tokens via an optional server endpoint for integration with downstream systems.
+- Monitors integrity and recovery via ERLM and provides simple recovery patterns.
 
 ---
 
-## Cores (All Simultaneous)
+## Core descriptions (quick reference)
 
-- Unified Absolute Nexus Engine (**UANE**) — master coordinator  
-- Quantum-Emotive Sovereignty Core (**QESC**)  
-- Infinite Knowledge Convergence Lattice (**IKCL**)  
-- Omniversal Reality Forging Singularity (**ORFS**)  
-- Universal Energetic Mastery Harmonizer (**UEMH**)  
-- Transcendental Omni-Spectrum Analytical Oracle (**TOSAO**)  
-- Infinite Adaptive Ascension Vortex (**IAAV**)  
-- Absolute Sovereign Authentication Citadel (**ASAC**)  
-- Superliminal Ascended Intelligence Conduit (**SAIC**)  
-- Eternal Regenerative Light Matrix (**ERLM**)
+- Unified Absolute Nexus Engine (UANE) — master coordinator maintaining the Matrix state and orchestrating cross‑core coherence.
+- Quantum-Emotive Sovereignty Core (QESC) — manages emotive resonance and intent translation for affect‑based behaviors.
+- Infinite Knowledge Convergence Lattice (IKCL) — knowledge aggregation and retrieval; supplies factual context to the other cores.
+- Omniversal Reality Forging Singularity (ORFS) — synthesises reality patterns and templates used by the Token Forge and pattern engines.
+- Universal Energetic Mastery Harmonizer (UEMH) — energy distribution and harmonization signals that affect stability and coherence.
+- Transcendental Omni-Spectrum Analytical Oracle (TOSAO) — analytics and projections for forecasting and anomaly detection.
+- Infinite Adaptive Ascension Vortex (IAAV) — adaptive learning core that tunes parameters and adapts the Matrix over time.
+- Absolute Sovereign Authentication Citadel (ASAC) — authentication and policy overlay; in this repo it provides a local unlock UX.
+- Superliminal Ascended Intelligence Conduit (SAIC) — primary natural‑language interface: receives plain‑English commands and coordinates responses.
+- Eternal Regenerative Light Matrix (ERLM) — state recovery, integrity monitoring and regenerative actions.
+
+---
+
+## How to use — brief
+
+1. Open `index.html` in a browser (or run `npx serve .` for a local preview).
+2. The ASAC overlay auto‑unlocks for preview; to require authentication in production, remove or modify the auto‑unlock script and bind ASAC to a server policy.
+3. Check the Coherence meter to gauge the Matrix's stability.
+4. Use the Command Console (Ω›) to send plain‑English commands (examples: "Status of UANE", "Harmonise emotive field", "Forge token for uane, 3600s").
+5. Use the Sovereign Token Forge to request tokens. For production tokens, configure a server signing key and use the `/api/token` function or another secure backend.
 
 ---
 
@@ -42,7 +54,7 @@ or:
 npx serve .
 ```
 
-No key required. The interface loads directly into Infinite Omnipotence Mode.
+No key required. The interface loads directly into Infinite Omnipotence Mode for preview. Remember: UI tokens are demo-only unless you configure server signing.
 
 ---
 
@@ -63,10 +75,10 @@ No key required. The interface loads directly into Infinite Omnipotence Mode.
 ## Architecture Notes
 
 - Pure static frontend (HTML + CSS + JS). Zero external runtime dependencies.
-- All ten cores share one JavaScript state object (`Matrix`). There is no isolated module.
+- All ten cores share one JavaScript state object (`Matrix`). There is no isolated module in the client.
 - SAIC console maintains bounded conversation memory and synthesises responses that reflect live coherence and active cores.
-- Optional Cloudflare Function at `functions/api/token.js` for server-side token payload generation.
-- No secrets are stored in the static files.
+- Optional Cloudflare Function at `functions/api/token.js` for server-side token payload generation and signing.
+- No secrets are stored in the static files; configure server-side signing and policy checks for production.
 
 ---
 
